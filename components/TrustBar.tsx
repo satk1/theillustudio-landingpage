@@ -1,7 +1,7 @@
 export default function TrustBar() {
   const stats = [
     { number: '500+', label: 'Events Shot' },
-    { number: '8+', label: 'Years Experience' },
+    { number: '3+', label: 'Years Experience' },
     { number: '100%', label: 'Delivered On Time' },
     { number: '★ 4.9', label: 'Client Rating' },
   ]

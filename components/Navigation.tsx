@@ -19,8 +19,8 @@ export default function Navigation() {
       scrolled ? 'bg-warm-white/90 backdrop-blur-xl shadow-sm' : 'bg-transparent'
     }`}>
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-        <Link href="/" className="flex items-center gap-3">
-          <div className="w-10 h-10 relative">
+        <Link href="/" className="flex items-center gap-4">
+          <div className="w-14 h-14 md:w-16 md:h-16 relative">
             <Image 
               src="/theillustudio_logo.jpeg" 
               alt="The Illu Studio" 
@@ -28,11 +28,11 @@ export default function Navigation() {
               className="object-contain"
             />
           </div>
-          <span className="font-display text-xl font-semibold">The Illu Studio</span>
+          <span className="font-display text-2xl md:text-3xl font-bold">The Illu Studio</span>
         </Link>
 
         <div className="hidden md:flex items-center gap-8">
-          <Link href="#work" className="text-muted-text hover:text-primary-text transition">Work</Link>
+          {/* <Link href="#work" className="text-muted-text hover:text-primary-text transition">Work</Link> */}
           <Link href="#services" className="text-muted-text hover:text-primary-text transition">Services</Link>
           <Link href="#about" className="text-muted-text hover:text-primary-text transition">About</Link>
           <Link href="#contact" className="text-muted-text hover:text-primary-text transition">Contact</Link>
@@ -58,7 +58,7 @@ export default function Navigation() {
       {mobileMenuOpen && (
         <div className="md:hidden bg-warm-white border-t border-primary-text/10">
           <div className="px-6 py-4 flex flex-col gap-4">
-            <Link href="#work" onClick={() => setMobileMenuOpen(false)}>Work</Link>
+            {/* <Link href="#work" onClick={() => setMobileMenuOpen(false)}>Work</Link> */}
             <Link href="#services" onClick={() => setMobileMenuOpen(false)}>Services</Link>
             <Link href="#about" onClick={() => setMobileMenuOpen(false)}>About</Link>
             <Link href="#contact" onClick={() => setMobileMenuOpen(false)}>Contact</Link>

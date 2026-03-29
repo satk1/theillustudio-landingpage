@@ -16,6 +16,9 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: 'The Illu Studio | Photography Services in Hyderabad',
   description: 'Wedding, birthday, corporate & event photography in Miyapur, Hyderabad. Book The Illu Studio — hello@theillustudio.com',
+  icons: {
+    icon: '/theillustudio_logo.jpeg',
+  },
 }
 
 export default function RootLayout({

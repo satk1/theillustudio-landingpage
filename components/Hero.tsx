@@ -1,46 +1,109 @@
 'use client'
 
-import { Canvas } from '@react-three/fiber'
-import { OrbitControls, Float, Sphere, MeshDistortMaterial } from '@react-three/drei'
-import { Suspense } from 'react'
+import { useEffect, useRef } from 'react'
 
-function Scene3D() {
-  return (
-    <>
-      <ambientLight intensity={0.5} />
-      <directionalLight position={[10, 10, 5]} intensity={1} color="#C8860A" />
-      <Float speed={1.5} rotationIntensity={0.5} floatIntensity={0.5}>
-        <Sphere args={[1, 64, 64]} scale={2}>
-          <MeshDistortMaterial
-            color="#C8860A"
-            attach="material"
-            distort={0.3}
-            speed={1.5}
-            roughness={0.4}
-            metalness={0.8}
-          />
-        </Sphere>
-      </Float>
-      <OrbitControls enableZoom={false} autoRotate autoRotateSpeed={0.5} />
-    </>
-  )
+interface Bubble {
+  x: number
+  y: number
+  radius: number
+  vx: number
+  vy: number
+  opacity: number
+  color: string
 }
 
 export default function Hero() {
+  const canvasRef = useRef<HTMLCanvasElement>(null)
+
+  useEffect(() => {
+    const canvas = canvasRef.current
+    if (!canvas) return
+
+    const ctx = canvas.getContext('2d')
+    if (!ctx) return
+
+    let animationFrameId: number
+    let bubbles: Bubble[] = []
+
+    const resize = () => {
+      canvas.width = window.innerWidth
+      canvas.height = window.innerHeight
+      initBubbles()
+    }
+
+    const initBubbles = () => {
+      bubbles = []
+      const bubbleCount = Math.floor((canvas.width * canvas.height) / 15000)
+      
+      for (let i = 0; i < bubbleCount; i++) {
+        bubbles.push({
+          x: Math.random() * canvas.width,
+          y: Math.random() * canvas.height,
+          radius: Math.random() * 80 + 40,
+          vx: (Math.random() - 0.5) * 0.5,
+          vy: (Math.random() - 0.5) * 0.5,
+          opacity: Math.random() * 0.3 + 0.1,
+          color: `rgba(200, 134, 10, ${Math.random() * 0.3 + 0.1})`
+        })
+      }
+    }
+
+    const animate = () => {
+      ctx.fillStyle = '#FAFAF8'
+      ctx.fillRect(0, 0, canvas.width, canvas.height)
+
+      bubbles.forEach((bubble) => {
+        bubble.x += bubble.vx
+        bubble.y += bubble.vy
+
+        if (bubble.x - bubble.radius > canvas.width) bubble.x = -bubble.radius
+        if (bubble.x + bubble.radius < 0) bubble.x = canvas.width + bubble.radius
+        if (bubble.y - bubble.radius > canvas.height) bubble.y = -bubble.radius
+        if (bubble.y + bubble.radius < 0) bubble.y = canvas.height + bubble.radius
+
+        const gradient = ctx.createRadialGradient(
+          bubble.x,
+          bubble.y,
+          0,
+          bubble.x,
+          bubble.y,
+          bubble.radius
+        )
+        
+        gradient.addColorStop(0, bubble.color.replace(/[\d.]+\)$/g, `${bubble.opacity})`))
+        gradient.addColorStop(0.4, bubble.color.replace(/[\d.]+\)$/g, `${bubble.opacity * 0.5})`))
+        gradient.addColorStop(1, 'rgba(200, 134, 10, 0)')
+
+        ctx.fillStyle = gradient
+        ctx.beginPath()
+        ctx.arc(bubble.x, bubble.y, bubble.radius, 0, Math.PI * 2)
+        ctx.fill()
+      })
+
+      animationFrameId = requestAnimationFrame(animate)
+    }
+
+    resize()
+    window.addEventListener('resize', resize)
+    animate()
+
+    return () => {
+      window.removeEventListener('resize', resize)
+      cancelAnimationFrame(animationFrameId)
+    }
+  }, [])
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      <div className="absolute inset-0 z-0 opacity-20">
-        <Canvas camera={{ position: [0, 0, 5] }}>
-          <Suspense fallback={null}>
-            <Scene3D />
-          </Suspense>
-        </Canvas>
-      </div>
+      <canvas
+        ref={canvasRef}
+        className="absolute inset-0 z-0"
+      />
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 py-32 text-left">
         <p className="text-sm uppercase tracking-widest text-muted-text mb-6">
           WEDDING · BIRTHDAY · BUSINESS · EVENTS<br />
-          Miyapur, Hyderabad
+          Bachupally, Hyderabad
         </p>
         
         <h1 className="font-display text-6xl md:text-8xl font-bold mb-6 text-balance">

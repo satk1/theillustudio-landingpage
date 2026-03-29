@@ -4,7 +4,7 @@ import Navigation from '@/components/Navigation'
 import Hero from '@/components/Hero'
 import TrustBar from '@/components/TrustBar'
 import Services from '@/components/Services'
-import Gallery from '@/components/Gallery'
+// import Gallery from '@/components/Gallery'
 import About from '@/components/About'
 import Testimonials from '@/components/Testimonials'
 import Contact from '@/components/Contact'
@@ -17,7 +17,7 @@ export default function Home() {
       <Hero />
       <TrustBar />
       <Services />
-      <Gallery />
+      {/* <Gallery /> */}
       <About />
       <Testimonials />
       <Contact />

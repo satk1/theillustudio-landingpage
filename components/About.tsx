@@ -22,7 +22,7 @@ export default function About() {
                 every celebration deserves to be remembered with clarity and beauty.
               </p>
               <p>
-                Based in Miyapur, Hyderabad, we work across weddings, birthdays, corporate events, 
+                Based in Bachupally, Hyderabad, we work across weddings, birthdays, corporate events, 
                 and family functions. Our approach is always the same: arrive early, blend in, and 
                 capture the moments as they naturally unfold.
               </p>
@@ -34,9 +34,9 @@ export default function About() {
             <div className="flex gap-6 text-sm text-muted-text">
               <span>500+ Events</span>
               <span>·</span>
-              <span>8+ Years</span>
+              <span>3+ Years</span>
               <span>·</span>
-              <span>Miyapur & Beyond</span>
+              <span>Hyderabad & Beyond</span>
             </div>
           </div>
         </div>

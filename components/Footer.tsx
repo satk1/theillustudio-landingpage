@@ -11,7 +11,7 @@ export default function Footer() {
           </div>
 
           <div className="flex gap-8 md:justify-end">
-            <Link href="#work" className="text-muted-text hover:text-primary-text transition">Work</Link>
+            {/* <Link href="#work" className="text-muted-text hover:text-primary-text transition">Work</Link> */}
             <Link href="#services" className="text-muted-text hover:text-primary-text transition">Services</Link>
             <Link href="#about" className="text-muted-text hover:text-primary-text transition">About</Link>
             <Link href="#contact" className="text-muted-text hover:text-primary-text transition">Contact</Link>
@@ -19,7 +19,7 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-primary-text/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-muted-text">
-          <p>© 2026 The Illu Studio · Miyapur, Hyderabad</p>
+          <p>© 2026 The Illu Studio · Bachupally, Hyderabad</p>
           <a href="mailto:hello@theillustudio.com" className="hover:text-primary-text transition">
             hello@theillustudio.com
           </a>

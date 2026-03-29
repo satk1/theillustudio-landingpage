@@ -19,7 +19,7 @@ export default function Contact() {
         </a>
 
         <p className="text-sm text-muted-text">
-          📍 Based in Miyapur, Hyderabad · Available across Telangana & AP
+          📍 Bachupally, Malkajgiri, Medchal · Available across Hyderabad
         </p>
       </div>
     </section>

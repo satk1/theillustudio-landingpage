@@ -33,17 +33,17 @@ export default function Hero() {
 
     const initBubbles = () => {
       bubbles = []
-      const bubbleCount = Math.floor((canvas.width * canvas.height) / 15000)
+      const bubbleCount = Math.floor((canvas.width * canvas.height) / 100000) // Further reduced - about 5-8 bubbles on average screen
       
       for (let i = 0; i < bubbleCount; i++) {
         bubbles.push({
           x: Math.random() * canvas.width,
           y: Math.random() * canvas.height,
-          radius: Math.random() * 80 + 40,
-          vx: (Math.random() - 0.5) * 0.5,
-          vy: (Math.random() - 0.5) * 0.5,
-          opacity: Math.random() * 0.3 + 0.1,
-          color: `rgba(200, 134, 10, ${Math.random() * 0.3 + 0.1})`
+          radius: Math.random() * 120 + 80, // Larger bubbles
+          vx: (Math.random() - 0.5) * 0.2, // Even slower
+          vy: (Math.random() - 0.5) * 0.2,
+          opacity: Math.random() * 0.1 + 0.03, // Very subtle
+          color: `rgba(200, 134, 10, ${Math.random() * 0.1 + 0.03})`
         })
       }
     }
@@ -123,7 +123,7 @@ export default function Hero() {
             Book a Session
           </a>
           <a 
-            href="#gallery"
+            href="#services"
             className="px-8 py-4 border border-primary-text/20 rounded-full font-medium hover:bg-surface transition"
           >
             View Our Work ↓

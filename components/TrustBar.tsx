@@ -13,10 +13,10 @@ export default function TrustBar() {
   return (
     <section className="py-16 border-y border-primary-text/10">
       <div className="max-w-7xl mx-auto px-6">
-        <ScrollReveal>
+        <ScrollReveal threshold={0.3} animateOnce={true}>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             {stats.map((stat, index) => (
-              <div key={index}>
+              <div key={index} className="transform-gpu">
                 <div className="text-4xl md:text-5xl font-display font-bold text-accent mb-2">
                   {stat.number}
                 </div>

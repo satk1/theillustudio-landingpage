@@ -7,7 +7,6 @@ export default function Services() {
     {
       title: 'Wedding & Event Photography',
       description: 'Timeless portraits and candid moments from your special day — from the morning rituals to the final send-off. Professional cinematography that tells your story.',
-      featured: true,
     },
     {
       title: 'Social Media & YouTube Marketing',
@@ -47,13 +46,9 @@ export default function Services() {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {services.map((service, index) => (
             <ScrollReveal key={index}>
-              <div
-                className={`bg-warm-white p-8 rounded-lg hover:shadow-lg transition ${
-                  service.featured ? 'md:col-span-2 lg:col-span-1 lg:row-span-2' : ''
-                }`}
-              >
+              <div className="bg-warm-white p-8 rounded-lg hover:shadow-lg transition h-full flex flex-col">
                 <h3 className="font-display text-3xl font-semibold mb-4">{service.title}</h3>
-                <p className="text-muted-text leading-relaxed">{service.description}</p>
+                <p className="text-muted-text leading-relaxed flex-grow">{service.description}</p>
               </div>
             </ScrollReveal>
           ))}

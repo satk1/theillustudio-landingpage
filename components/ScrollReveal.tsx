@@ -5,11 +5,19 @@ import { useEffect, useRef, ReactNode, useState } from 'react'
 interface ScrollRevealProps {
   children: ReactNode
   className?: string
+  threshold?: number
+  animateOnce?: boolean
 }
 
-export default function ScrollReveal({ children, className = '' }: ScrollRevealProps) {
+export default function ScrollReveal({ 
+  children, 
+  className = '', 
+  threshold = 0.1,
+  animateOnce = false 
+}: ScrollRevealProps) {
   const ref = useRef<HTMLDivElement>(null)
   const [isVisible, setIsVisible] = useState(false)
+  const [hasAnimated, setHasAnimated] = useState(false)
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -17,19 +25,24 @@ export default function ScrollReveal({ children, className = '' }: ScrollRevealP
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             setIsVisible(true)
+            setHasAnimated(true)
             entry.target.classList.add('slide-up')
             entry.target.classList.remove('slide-down')
-          } else if (isVisible) {
-            // Only animate out if it was previously visible
+            
+            // If animateOnce is true, stop observing after first animation
+            if (animateOnce) {
+              observer.unobserve(entry.target)
+            }
+          } else if (isVisible && !animateOnce && !hasAnimated) {
+            // Only animate out if it was previously visible and animateOnce is false
             entry.target.classList.remove('slide-up')
             entry.target.classList.add('slide-down')
-            // Reset visibility after animation
             setTimeout(() => setIsVisible(false), 600)
           }
         })
       },
       {
-        threshold: 0.1,
+        threshold: threshold,
         rootMargin: '0px 0px -80px 0px',
       }
     )
@@ -43,7 +56,7 @@ export default function ScrollReveal({ children, className = '' }: ScrollRevealP
         observer.unobserve(ref.current)
       }
     }
-  }, [isVisible])
+  }, [isVisible, threshold, animateOnce, hasAnimated])
 
   return (
     <div 

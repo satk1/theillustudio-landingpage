@@ -94,13 +94,13 @@ export default function Hero() {
   }, [])
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative flex items-center justify-center overflow-hidden pt-20 pb-32">
       <canvas
         ref={canvasRef}
         className="absolute inset-0 z-0"
       />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6 py-32 text-left">
+      <div className="relative z-10 max-w-7xl mx-auto px-6 py-32 md:py-40 text-left">
         <p className="text-sm uppercase tracking-widest text-muted-text mb-6">
           WEDDING · EVENTS · SOCIAL MEDIA · VIDEO PRODUCTION<br />
           Secunderabad, Hyderabad

@@ -14,8 +14,8 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  title: 'The Illu Studio | Photography Services in Hyderabad',
-  description: 'Wedding, birthday, corporate & event photography in Miyapur, Hyderabad. Book The Illu Studio — hello@theillustudio.com',
+  title: 'The Illu Studio | Photography & Social Media Marketing in Hyderabad',
+  description: 'Wedding photography, event cinematography, social media marketing & video production in Hyderabad. Shaping Digital Stars. Book The Illu Studio — hello@theillustudio.com',
   icons: {
     icon: '/theillustudio_logo.jpeg',
   },

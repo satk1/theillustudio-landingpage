@@ -5,21 +5,29 @@ import ScrollReveal from './ScrollReveal'
 export default function Services() {
   const services = [
     {
-      title: 'Wedding Photography',
-      description: 'Timeless portraits and candid moments from your special day — from the morning rituals to the final send-off.',
+      title: 'Wedding & Event Photography',
+      description: 'Timeless portraits and candid moments from your special day — from the morning rituals to the final send-off. Professional cinematography that tells your story.',
       featured: true,
     },
     {
+      title: 'Social Media & YouTube Marketing',
+      description: 'Grow your digital presence with strategic content marketing, audience engagement, and channel optimization.',
+    },
+    {
+      title: 'Professional Video Editing',
+      description: 'Transform raw footage into compelling stories with expert editing, color grading, and post-production.',
+    },
+    {
+      title: 'Custom Thumbnail Design',
+      description: 'Eye-catching thumbnails that boost click-through rates and make your content stand out.',
+    },
+    {
       title: 'Birthday Celebrations',
-      description: 'Every laugh, every surprise, every slice of cake — captured as it happened.',
+      description: 'Every laugh, every surprise, every slice of cake — captured as it happened with creative flair.',
     },
     {
       title: 'Business & Corporate',
       description: 'Professional headshots, product shoots, and brand stories that make the right impression.',
-    },
-    {
-      title: 'Functions & Parties',
-      description: 'Receptions, engagements, naming ceremonies, family reunions — no celebration is too big or too small.',
     },
   ]
 
@@ -36,12 +44,12 @@ export default function Services() {
           </p>
         </ScrollReveal>
 
-        <div className="grid md:grid-cols-2 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {services.map((service, index) => (
             <ScrollReveal key={index}>
               <div
                 className={`bg-warm-white p-8 rounded-lg hover:shadow-lg transition ${
-                  service.featured ? 'md:row-span-2' : ''
+                  service.featured ? 'md:col-span-2 lg:col-span-1 lg:row-span-2' : ''
                 }`}
               >
                 <h3 className="font-display text-3xl font-semibold mb-4">{service.title}</h3>

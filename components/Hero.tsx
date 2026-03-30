@@ -102,7 +102,7 @@ export default function Hero() {
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 py-32 text-left">
         <p className="text-sm uppercase tracking-widest text-muted-text mb-6">
-          WEDDING · BIRTHDAY · BUSINESS · EVENTS<br />
+          WEDDING · EVENTS · SOCIAL MEDIA · VIDEO PRODUCTION<br />
           Secunderabad, Hyderabad
         </p>
         

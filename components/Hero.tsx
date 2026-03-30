@@ -103,7 +103,7 @@ export default function Hero() {
       <div className="relative z-10 max-w-7xl mx-auto px-6 py-32 text-left">
         <p className="text-sm uppercase tracking-widest text-muted-text mb-6">
           WEDDING · BIRTHDAY · BUSINESS · EVENTS<br />
-          Gachibowli, Hyderabad
+          Secunderabad, Hyderabad
         </p>
         
         <h1 className="font-display text-6xl md:text-8xl font-bold mb-6 text-balance">

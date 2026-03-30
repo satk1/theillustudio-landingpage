@@ -29,7 +29,7 @@ export default function About() {
                   every celebration deserves to be remembered with clarity and beauty.
                 </p>
                 <p>
-                  Based in Gachibowli, Hyderabad, we work across weddings, birthdays, corporate events, 
+                  Based in Secunderabad, Hyderabad, we work across weddings, birthdays, corporate events, 
                   and family functions. Our approach is always the same: arrive early, blend in, and 
                   capture the moments as they naturally unfold.
                 </p>

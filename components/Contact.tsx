@@ -24,7 +24,7 @@ export default function Contact() {
           </a>
 
           <p className="text-sm text-muted-text mb-8">
-            📍 Gachibowli, Jubilee Hills, Banjara Hills · Available across Hyderabad
+            📍 Secunderabad, Gachibowli, Jubilee Hills · Available across Hyderabad
           </p>
 
           <div className="flex justify-center gap-6 mt-8">

@@ -66,7 +66,7 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-primary-text/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-muted-text">
-          <p>© 2026 The Illu Studio · Gachibowli, Hyderabad</p>
+          <p>© 2026 The Illu Studio · Secunderabad, Hyderabad</p>
           <a href="mailto:hello@theillustudio.com" className="hover:text-primary-text transition">
             hello@theillustudio.com
           </a>

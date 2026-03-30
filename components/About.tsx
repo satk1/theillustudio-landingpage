@@ -41,7 +41,7 @@ export default function About() {
               <div className="flex gap-6 text-sm text-muted-text">
                 <span>500+ Events</span>
                 <span>·</span>
-                <span>3+ Years</span>
+                <span>15+ Years</span>
                 <span>·</span>
                 <span>Hyderabad & Beyond</span>
               </div>
